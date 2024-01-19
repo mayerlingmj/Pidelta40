@@ -1,12 +1,12 @@
 {
-  "name": "pi-delta-40-anniversary",
+  "name": "pidelta40",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "deploy": "git push heroku main && cd my-website && npm run build"
+    "deploy": "git push heroku main && cd my-website && npm run"
   },
   "keywords": [],
   "author": "",
