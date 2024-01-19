@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-
+import { deleteComment } from '../services/commentService'
 const CommentDetail = () => {
   const [comment, setComment] = useState(null)
   const { commentId } = useParams()
@@ -11,6 +11,18 @@ const CommentDetail = () => {
       try {
         const response = await axios.get(`/comments/${commentId}`)
         setComment(response.data)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+
+    const handleDeleteComment = async (commentId) => {
+      try {
+        await deleteComment(commentId)
+        const updatedComments = comments.filter(
+          (comment) => comment._id !== commentId
+        )
+        setComments(updatedComments)
       } catch (error) {
         console.error(error)
       }

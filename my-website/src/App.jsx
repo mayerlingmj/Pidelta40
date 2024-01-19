@@ -11,6 +11,7 @@ import User from './components/User'
 import CrossingLines from './components/CrossingLines'
 import CommentList from './pages/CommentList'
 import CommentDetail from './pages/CommentDetail'
+import TripDownMemoryLane from './components/TripDownMemoryLane'
 
 const LetsChat = ({ isAuthenticated }) => {
   return <div></div>
@@ -75,6 +76,7 @@ const App = () => {
           <Route path="/about40th/hotelinfo" element={<HotelInfo />} />
           <Route path="/comment" element={<AddComment user={user} />} />
           <Route path="/logout" element={<Navigate to="/" />} />
+          <Route path="/slideshow" element={<TripDownMemoryLane />} />
         </Routes>
       </main>
     </div>

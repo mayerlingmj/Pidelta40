@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const aboutContainerStyle = {
+  textShadow: '2px 2px 4px white',
   display: 'flex',
   alignItems: 'center',
   position: 'relative',
@@ -38,9 +39,14 @@ const h1Style = {
 }
 
 const pStyle = {
-  fontSize: '16.5px',
+  fontSize: '18px',
   fontWeight: 'bold',
-  color: 'black'
+  color: 'black',
+  textShadow: '2px 2px 4px white',
+  textAlign: 'left',
+  lineHeight: '1.6',
+  letterSpacing: '0.5px',
+  margin: '15px 0'
 }
 
 const linkStyle = {
@@ -60,19 +66,21 @@ const About = () => (
     <div style={contentContainerStyle}>
       <h1 style={h1Style}>About Pi Delta</h1>
       <p style={pStyle}>
-        Pi Delta is thrilled to mark a significant milestone in its history as
-        we celebrate 40 years of sisterhood, scholarship, and service. Founded
-        on May 12, 1984, our sorority has been a beacon of unity and support for
-        generations of women. Since our humble beginnings, Pi Delta has grown
-        into a diverse and tight-knit community of sisters who have thrived
-        together through every challenge and triumph. This momentous occasion is
-        a testament to the enduring bonds we've forged, the leadership we've
-        cultivated, and the positive impact we've made on our campus and beyond.
-        Our 40th-anniversary celebration promises to be a memorable event filled
-        with reflection, gratitude, and an unwavering commitment to our core
-        values. Join us as we honor our founding members, reminisce about
-        cherished memories, and look ahead to an even brighter future for Pi
-        Delta chapter!
+        <strong>
+          Pi Delta is thrilled to mark a significant milestone in its history as
+          we celebrate 40 years of sisterhood, scholarship, and service. Founded
+          on May 12, 1984, our sorority has been a beacon of unity and support
+          for generations of women. Since our humble beginnings, Pi Delta has
+          grown into a diverse and tight-knit community of sisters who have
+          thrived together through every challenge and triumph. This momentous
+          occasion is a testament to the enduring bonds we've forged, the
+          leadership we've cultivated, and the positive impact we've made on our
+          campus and beyond. Our 40th-anniversary celebration promises to be a
+          memorable event filled with reflection, gratitude, and an unwavering
+          commitment to our core values. Join us as we honor our founding
+          members, reminisce about cherished memories, and look ahead to an even
+          brighter future for Pi Delta chapter!
+        </strong>
       </p>
 
       <Link to="/about/crossinglines" style={linkStyle}>

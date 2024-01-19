@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const navbarStyle = {
-  backgroundColor: 'crimson',
+  backgroundColor: 'rgb(141, 27, 16)',
   color: 'cream',
   padding: '2px',
   position: 'fixed',
@@ -54,10 +54,16 @@ const Navbar = ({ isAuthenticated, handleLogout }) => {
               </Link>
             </li>
             <li style={liStyle}>
+              <Link to="/slideshow" style={linkStyle}>
+                Trip Down Memory Lane
+              </Link>
+            </li>
+
+            {/* <li style={liStyle}>
               <Link to="/comment" style={linkStyle}>
                 Let's Chat
               </Link>
-            </li>
+            </li> */}
             <li style={liStyle}>
               <button onClick={handleLogout}>Logout</button>
             </li>

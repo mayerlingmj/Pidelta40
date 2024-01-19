@@ -95,7 +95,7 @@ const CommentList = ({ user }) => {
             style={{
               width: '200px',
               margin: '10px',
-              backgroundColor: 'red',
+              backgroundColor: 'crimson',
               borderRadius: '5px',
               padding: '10px',
               marginBottom: '500px',

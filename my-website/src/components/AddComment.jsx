@@ -54,16 +54,25 @@ const AddComment = ({ user }) => {
 
   return (
     <div
-      style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}
+      style={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        backgroundImage: `url('https://i.imgur.com/XorUljT.png')`,
+        backgroundSize: 'cover',
+        backgroundAttachment: 'fixed',
+        height: '100vh'
+      }}
     >
       <h2 style={{ width: '100%', textAlign: 'center' }}>Add Comment</h2>
       <div
         style={{
           width: '200px',
           margin: '10px',
-          backgroundColor: 'lightblue',
+          backgroundColor: 'crimson',
           borderRadius: '5px',
           padding: '10px',
+          marginBottom: '500px',
           boxSizing: 'border-box'
         }}
       >

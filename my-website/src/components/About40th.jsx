@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 const About40th = () => {
   const containerStyle = {
+    textShadow: '2px 2px 4px white',
     fontWeight: 'bold',
     display: 'flex',
     alignItems: 'center',
@@ -43,7 +44,8 @@ const About40th = () => {
   const paragraphStyle = {
     fontSize: '20px',
     textAlign: 'left',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    textShadow: '2px 2px 4px white'
   }
 
   const linkStyle = {

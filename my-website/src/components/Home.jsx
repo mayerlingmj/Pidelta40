@@ -27,14 +27,52 @@ const homeDescriptionStyle = {
   fontSize: '15px'
 }
 
+const footerStyle = {
+  position: 'fixed',
+  bottom: 0,
+  left: 0,
+  width: '100%',
+  backgroundColor: 'rgb(141, 27, 16)',
+  color: 'white',
+  padding: '0.5px 0',
+  textAlign: 'center'
+}
+
+const emailLinkStyle = {
+  color: 'white',
+  textDecoration: 'none',
+  fontWeight: 'bold',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center'
+}
+
+const textBeforeLogoStyle = {
+  marginRight: '10px'
+}
+
 const Home = () => (
-  <div style={homeContainerStyle} className="home-container">
-    <h1 style={homeTitleStyle} className="home-title">
+  <div className="home-container" style={homeContainerStyle}>
+    <h1 className="home-title" style={homeTitleStyle}>
       Welcome to Pi Delta's 40th Anniversary
     </h1>
-    <p style={homeDescriptionStyle} className="home-description">
+    <p className="home-description" style={homeDescriptionStyle}>
       {/* Add content for the homepage here */}
     </p>
+
+    {/* Footer */}
+    <div style={footerStyle}>
+      <p style={emailLinkStyle}>
+        <span style={textBeforeLogoStyle}>For inquiries, contact us</span>
+        <a href="mailto:oracleeventplanning@gmail.com" style={emailLinkStyle}>
+          <img
+            src="https://i.imgur.com/PHBBGr5.png"
+            alt="Email Logo"
+            style={{ maxWidth: '50px', marginTop: '10px' }}
+          />
+        </a>
+      </p>
+    </div>
   </div>
 )
 

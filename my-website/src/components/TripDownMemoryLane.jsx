@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 const TripDownMemoryLane = () => {
   const [images, setImages] = useState([])
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   useEffect(() => {
     // Add your image addresses here
@@ -33,36 +35,50 @@ const TripDownMemoryLane = () => {
     setImages(imagesData)
   }, [])
 
-  const handlePrevClick = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    )
-  }
-
-  const handleNextClick = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    )
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 10000, // Adjust the speed as needed (duration for each slide)
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 0, // Set to 0 to control autoplay manually
+    cssEase: 'linear'
   }
 
   return (
-    <div>
-      <h1>Trip Down Memory Lane</h1>
-      <div className="slideshow">
+    <div style={{ backgroundColor: 'black' }}>
+      <h1 style={{ textAlign: 'center', color: 'white' }}>
+        Trip Down Memory Lane
+      </h1>
+      <Slider {...settings}>
         {images.map((image) => (
           <div
             key={image.index}
-            className={`slide ${
-              currentImageIndex === image.index ? 'active' : ''
-            }`}
+            className="slide"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              padding: '10px',
+              border: '1px solid #ccc',
+              borderRadius: '5px',
+              margin: '0 10px',
+              backgroundColor: 'black'
+            }}
           >
-            <img src={image.imageUrl} alt={image.description} />
-            <p>{image.description}</p>
+            <img
+              src={image.imageUrl}
+              alt={image.description}
+              style={{
+                maxWidth: '100%',
+                maxHeight: '600px',
+                marginBottom: '10px'
+              }}
+            />
           </div>
         ))}
-      </div>
-      <button onClick={handlePrevClick}>Previous</button>
-      <button onClick={handleNextClick}>Next</button>
+      </Slider>
     </div>
   )
 }
