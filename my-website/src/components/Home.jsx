@@ -1,10 +1,10 @@
 import React from 'react'
 
 const homeContainerStyle = {
-  backgroundImage: "url('https://i.imgur.com/ZyGrAi6.png')",
-  backgroundSize: 'contain',
+  backgroundImage: "url('https://i.imgur.com/hsd2IlB.png')",
+  backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
-  backgroundAttachment: 'fixed',
+  backgroundAttachment: 'scroll',
   backgroundPosition: 'center',
   height: '100vh',
   display: 'flex',
@@ -54,7 +54,7 @@ const textBeforeLogoStyle = {
 const Home = () => (
   <div className="home-container" style={homeContainerStyle}>
     <h1 className="home-title" style={homeTitleStyle}>
-      Welcome to Pi Delta's 40th Anniversary
+      {/* Welcome to Pi Delta's 40th Anniversary */}
     </h1>
     <p className="home-description" style={homeDescriptionStyle}>
       {/* Add content for the homepage here */}

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
 const aboutContainerStyle = {
   textShadow: '2px 2px 4px white',
   display: 'flex',
-  alignItems: 'center',
+  alignItems: 'flex-end',
+  minHeight: '100vh',
   position: 'relative',
   marginTop: '10px',
   marginBottom: '10px'
@@ -12,7 +12,7 @@ const aboutContainerStyle = {
 
 const backgroundImageStyle = {
   position: 'fixed',
-  top: 20,
+  top: 0,
   left: 0,
   zIndex: -1,
   width: '100%',
@@ -28,7 +28,6 @@ const contentContainerStyle = {
   fontWeight: 'bold',
   fontStyle: 'italic',
   textAlign: 'left',
-
   left: '0',
   top: '0'
 }
@@ -53,21 +52,21 @@ const linkStyle = {
   fontSize: '29px',
   textDecoration: 'none',
   color: '#cc0000',
-  fontWeight: 'bold'
+  fontWeight: 'bold',
+  marginTop: '20px'
 }
-
 const About = () => (
   <div style={aboutContainerStyle}>
     <img
-      src="https://i.imgur.com/2l2XVIM.png"
+      src="https://i.imgur.com/3JUVD6u.png"
       alt="Background"
       style={backgroundImageStyle}
     />
     <div style={contentContainerStyle}>
-      <h1 style={h1Style}>About Pi Delta</h1>
+      {/* <h1 style={h1Style}>About Pi Delta</h1> */}
       <p style={pStyle}>
         <strong>
-          Pi Delta is thrilled to mark a significant milestone in its history as
+          {/* Pi Delta is thrilled to mark a significant milestone in its history as
           we celebrate 40 years of sisterhood, scholarship, and service. Founded
           on May 12, 1984, our sorority has been a beacon of unity and support
           for generations of women. Since our humble beginnings, Pi Delta has
@@ -79,7 +78,7 @@ const About = () => (
           memorable event filled with reflection, gratitude, and an unwavering
           commitment to our core values. Join us as we honor our founding
           members, reminisce about cherished memories, and look ahead to an even
-          brighter future for Pi Delta chapter!
+          brighter future for Pi Delta chapter! */}
         </strong>
       </p>
 

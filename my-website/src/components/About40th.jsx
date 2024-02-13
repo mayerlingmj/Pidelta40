@@ -6,15 +6,17 @@ const About40th = () => {
     textShadow: '2px 2px 4px white',
     fontWeight: 'bold',
     display: 'flex',
-    alignItems: 'center',
+    flexDirection: 'column', // Set flex direction to column
+    alignItems: 'flex-end', // Align items to the bottom
     position: 'relative',
     marginTop: '10px',
-    marginBottom: '10px'
+    marginBottom: '10px',
+    minHeight: '100vh' // Ensure the container takes up at least the full height of the viewport
   }
 
   const backgroundImageStyle = {
     position: 'fixed',
-    top: 20,
+    top: 0,
     left: 0,
     zIndex: -1,
     width: '100%',
@@ -52,20 +54,21 @@ const About40th = () => {
     fontSize: '29px',
     textDecoration: 'none',
     color: '#cc0000',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    marginTop: '20px' // Add margin to separate it from the bottom
   }
 
   return (
     <div style={containerStyle}>
       <img
-        src="https://i.imgur.com/QXcdcVR.png"
+        src="https://i.imgur.com/NfmbdGu.png"
         alt="Background"
         style={backgroundImageStyle}
       />
       <div style={contentStyle}>
-        <h1 style={headingStyle}>About the 40th</h1>
+        <h1 style={headingStyle}></h1>
         <p style={paragraphStyle}>
-          As we approach our 40th anniversary, excitement fills the air. It's a
+          {/* As we approach our 40th anniversary, excitement fills the air. It's a
           time when we eagerly anticipate reuniting with beloved sisters from
           years past and embracing the opportunity to create new memories that
           will be cherished for years to come. Our celebration isn't just about
@@ -79,7 +82,7 @@ const About40th = () => {
           scholarship and service remains as strong as ever, and the support and
           love we have for each other continue to flourish. Here's to 40 years
           of togetherness, growth, and making a difference in the world. Oo-Oop
-          Pi Delta!
+          Pi Delta! */}
         </p>
         <Link to="/about40th/hotelinfo" style={linkStyle}>
           Hotel Information

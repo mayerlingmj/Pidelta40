@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const hotelInfoStyle = {
-  backgroundImage: 'url(https://i.imgur.com/ibtShq5.jpg)',
+  backgroundImage: 'url(https://i.imgur.com/yfrlzYh.png)',
   backgroundSize: '100% 100%',
   backgroundPosition: 'center',
   width: '100%',
@@ -32,7 +32,7 @@ const priceStyle = {
 }
 
 const bookButtonStyle = {
-  margin: '10px'
+  marginTop: '20px'
 }
 
 const linkStyle = {

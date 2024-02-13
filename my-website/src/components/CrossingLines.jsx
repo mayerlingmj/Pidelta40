@@ -2,16 +2,17 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const containerStyle = {
-  background:
-    "url('https://i.imgur.com/0iatyu6.png') no-repeat center center fixed",
-  backgroundSize: 'contain',
+  backgroundImage: "url('https://i.imgur.com/PVrepN5.png')",
+  backgroundRepeat: 'no-repeat',
+  // backgroundPosition: 'center center',
+  backgroundSize: 'cover',
   fontFamily: 'Shrikhand, cursive',
   fontSize: '35px',
   fontWeight: 'bold',
   color: 'rgb(11, 11, 10)',
-  padding: '10px',
-  margin: '30px 0',
-  borderRadius: '5px',
+  padding: '410px',
+  margin: '130px 0',
+  borderRadius: '15px',
   textAlign: 'center'
 }
 
@@ -37,9 +38,9 @@ const crossingLineStyle = {
 
 const CrossingLines = () => (
   <div style={containerStyle} className="crossing-lines-container">
-    <h1 style={h1Style}>Pi Delta Lines</h1>
+    <h1 style={h1Style}></h1>
 
-    <div style={crossingLineStyle}>
+    {/* <div style={crossingLineStyle}>
       <p>Spring 1984 - Black Diamonds</p>
     </div>
 
@@ -137,7 +138,7 @@ const CrossingLines = () => (
 
     <div style={crossingLineStyle}>
       <p>Spring 2018 - IneVitable</p>
-    </div>
+    </div> */}
   </div>
 )
 
