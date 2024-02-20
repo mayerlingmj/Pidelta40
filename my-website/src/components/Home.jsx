@@ -6,7 +6,7 @@ const homeContainerStyle = {
   backgroundRepeat: 'no-repeat',
   backgroundAttachment: 'scroll',
   backgroundPosition: 'center',
-  height: '100vh',
+  minHeight: '100vh', // Set minHeight instead of height for smaller content on mobile
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'flex-start',
@@ -17,14 +17,14 @@ const homeContainerStyle = {
 }
 
 const homeTitleStyle = {
-  fontSize: '70px',
+  fontSize: '5vw', // Responsive font size
   fontFamily: 'Shrikhand, cursive',
-  marginBottom: '20px',
-  marginTop: '70px'
+  marginBottom: '2vw',
+  marginTop: '5vw' // Adjusted margin for better spacing
 }
 
 const homeDescriptionStyle = {
-  fontSize: '15px'
+  fontSize: '3vw' // Responsive font size
 }
 
 const footerStyle = {
@@ -34,7 +34,7 @@ const footerStyle = {
   width: '100%',
   backgroundColor: 'rgb(141, 27, 16)',
   color: 'white',
-  padding: '0.5px 0',
+  padding: '1vw 0', // Responsive padding
   textAlign: 'center'
 }
 
@@ -48,7 +48,7 @@ const emailLinkStyle = {
 }
 
 const textBeforeLogoStyle = {
-  marginRight: '10px'
+  marginRight: '1vw' // Responsive margin
 }
 
 const Home = () => (
@@ -68,7 +68,7 @@ const Home = () => (
           <img
             src="https://i.imgur.com/PHBBGr5.png"
             alt="Email Logo"
-            style={{ maxWidth: '50px', marginTop: '10px' }}
+            style={{ maxWidth: '2vw', marginTop: '1vw' }} // Responsive image size and margin
           />
         </a>
       </p>

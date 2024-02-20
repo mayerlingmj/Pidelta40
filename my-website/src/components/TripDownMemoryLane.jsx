@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 const TripDownMemoryLane = () => {
   const [images, setImages] = useState([])
+  const [selectedImage, setSelectedImage] = useState(null)
+  const sliderRef = useRef()
 
   useEffect(() => {
-    // Add your image addresses here
     const imageAddresses = [
+      'https://i.imgur.com/QqiQvQR.jpeg',
       'https://i.imgur.com/Ulkq85Z.jpg',
       'https://i.imgur.com/N0dubsl.jpg',
       'https://i.imgur.com/MeNw2Wl.jpg',
@@ -64,11 +66,8 @@ const TripDownMemoryLane = () => {
       'https://i.imgur.com/bQsDN0V.jpeg',
       'https://i.imgur.com/i1ocIuN.jpeg',
       'https://i.imgur.com/VTBlQho.jpeg'
-
-      // Add more image addresses as needed
     ]
 
-    // Create an array of image objects with an index and description
     const imagesData = imageAddresses.map((address, index) => ({
       index,
       imageUrl: address,
@@ -81,20 +80,46 @@ const TripDownMemoryLane = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 9000, // Adjust the speed as needed (duration for each slide)
+    speed: 9000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 0, // Set to 0 to control autoplay manually
-    cssEase: 'linear'
+    autoplaySpeed: 5000,
+    cssEase: 'linear',
+    beforeChange: (current, next) => {
+      if (selectedImage !== null && current !== next) {
+        setSelectedImage(null)
+      }
+    },
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  }
+
+  const handleImageClick = (index) => {
+    setSelectedImage(index)
+    sliderRef.current.slickGoTo(index)
+  }
+
+  const handleSlideAfterChange = (currentSlide) => {
+    setSelectedImage(currentSlide)
   }
 
   return (
-    <div style={{ backgroundColor: 'black' }}>
-      <h1 style={{ textAlign: 'center', color: 'white' }}>
-        Trip Down Memory Lane
-      </h1>
-      <Slider {...settings}>
+    <div style={{ backgroundColor: 'black', padding: '20px', height: '100vh' }}>
+      <h1 style={{ textAlign: 'center', color: 'white' }}></h1>
+      <Slider
+        ref={sliderRef}
+        {...settings}
+        style={{ height: '80%' }}
+        afterChange={handleSlideAfterChange}
+      >
         {images.map((image) => (
           <div
             key={image.index}
@@ -106,7 +131,9 @@ const TripDownMemoryLane = () => {
               padding: '10px',
               border: '1px solid #ccc',
               borderRadius: '5px',
-              margin: '0 10px',
+              margin: '0 auto',
+              maxWidth: '800px',
+              height: '100%',
               backgroundColor: 'black'
             }}
           >
@@ -114,7 +141,9 @@ const TripDownMemoryLane = () => {
               src={image.imageUrl}
               alt={image.description}
               style={{
-                maxWidth: '100%',
+                objectFit: 'contain',
+                width: '100%',
+                height: '100%',
                 maxHeight: '600px',
                 marginBottom: '10px'
               }}
@@ -122,6 +151,34 @@ const TripDownMemoryLane = () => {
           </div>
         ))}
       </Slider>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          marginTop: '20px',
+          height: '20%',
+          overflowX: 'auto'
+        }}
+      >
+        <div style={{ display: 'flex' }}>
+          {images.map((image) => (
+            <img
+              key={image.index}
+              src={image.imageUrl}
+              alt={image.description}
+              style={{
+                width: '50px',
+                height: '50px',
+                margin: '0 5px',
+                cursor: 'pointer',
+                border:
+                  selectedImage === image.index ? '2px solid white' : 'none'
+              }}
+              onClick={() => handleImageClick(image.index)}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   )
 }
